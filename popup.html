@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>中科大认证自动登录设置</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <h1>自动登录设置</h1>
+      <p class="hint">账号仅保存在当前浏览器中，不会上传到 GitHub。密码仍由浏览器密码管理器保存。</p>
+      <form id="settingsForm">
+        <label for="username">学工号 / GID</label>
+        <input
+          id="username"
+          name="username"
+          type="text"
+          maxlength="200"
+          autocomplete="username"
+          placeholder="请输入学工号 / GID"
+          required
+        >
+        <div class="actions">
+          <button type="submit">保存账号</button>
+          <button type="button" id="clearButton" class="secondary">清除</button>
+        </div>
+      </form>
+      <p id="status" role="status" aria-live="polite"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

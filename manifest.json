@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "中科大认证自动登录",
+  "version": "1.2.0",
+  "description": "使用本地配置的账号自动完成中科大统一身份认证登录，并跳过 CARSI 的两段授权确认。",
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "中科大认证自动登录设置",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://id.ustc.edu.cn/*",
+        "https://idp.ustc.edu.cn/*",
+        "https://passport.ustc.edu.cn/*",
+        "https://wvpn.ustc.edu.cn/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}
